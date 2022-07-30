@@ -19,6 +19,11 @@ public final class NewServiceImpl {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_containsString_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_newResponseInteger_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_newResponseInteger_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -29,10 +34,14 @@ public final class NewServiceImpl {
   static {
     java.lang.String[] descriptorData = {
       "\n\020newService.proto\"%\n\016containsString\022\023\n\013" +
-      "firstString\030\001 \001(\t2A\n\nnewService\0223\n\017GetFi" +
-      "rsttString\022\017.containsString\032\017.containsSt" +
-      "ringB#\n\017grpc.newServiceB\016NewServiceImplP" +
-      "\001b\006proto3"
+      "firstString\030\001 \001(\t\"*\n\022newResponseInteger\022" +
+      "\024\n\014firstInteger\030\002 \001(\0052\302\001\n\nnewService\0223\n\017" +
+      "GetFirsttString\022\017.containsString\032\017.conta" +
+      "insString\022F\n\036GetFirsttStringServerStream" +
+      "ing\022\017.containsString\032\017.containsString\"\0000" +
+      "\001\0227\n\017GetFirstInteger\022\017.containsString\032\023." +
+      "newResponseIntegerB#\n\017grpc.newServiceB\016N" +
+      "ewServiceImplP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -52,6 +61,12 @@ public final class NewServiceImpl {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_containsString_descriptor,
         new java.lang.String[] { "FirstString", });
+    internal_static_newResponseInteger_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_newResponseInteger_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_newResponseInteger_descriptor,
+        new java.lang.String[] { "FirstInteger", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

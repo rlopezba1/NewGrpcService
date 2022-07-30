@@ -59,6 +59,70 @@ public final class newServiceGrpc {
      return getGetFirsttStringMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<grpc.newService.containsString,
+      grpc.newService.containsString> getGetFirsttStringServerStreamingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetFirsttStringServerStreaming",
+      requestType = grpc.newService.containsString.class,
+      responseType = grpc.newService.containsString.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<grpc.newService.containsString,
+      grpc.newService.containsString> getGetFirsttStringServerStreamingMethod() {
+    io.grpc.MethodDescriptor<grpc.newService.containsString, grpc.newService.containsString> getGetFirsttStringServerStreamingMethod;
+    if ((getGetFirsttStringServerStreamingMethod = newServiceGrpc.getGetFirsttStringServerStreamingMethod) == null) {
+      synchronized (newServiceGrpc.class) {
+        if ((getGetFirsttStringServerStreamingMethod = newServiceGrpc.getGetFirsttStringServerStreamingMethod) == null) {
+          newServiceGrpc.getGetFirsttStringServerStreamingMethod = getGetFirsttStringServerStreamingMethod = 
+              io.grpc.MethodDescriptor.<grpc.newService.containsString, grpc.newService.containsString>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "newService", "GetFirsttStringServerStreaming"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  grpc.newService.containsString.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  grpc.newService.containsString.getDefaultInstance()))
+                  .setSchemaDescriptor(new newServiceMethodDescriptorSupplier("GetFirsttStringServerStreaming"))
+                  .build();
+          }
+        }
+     }
+     return getGetFirsttStringServerStreamingMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<grpc.newService.containsString,
+      grpc.newService.newResponseInteger> getGetFirstIntegerMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetFirstInteger",
+      requestType = grpc.newService.containsString.class,
+      responseType = grpc.newService.newResponseInteger.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<grpc.newService.containsString,
+      grpc.newService.newResponseInteger> getGetFirstIntegerMethod() {
+    io.grpc.MethodDescriptor<grpc.newService.containsString, grpc.newService.newResponseInteger> getGetFirstIntegerMethod;
+    if ((getGetFirstIntegerMethod = newServiceGrpc.getGetFirstIntegerMethod) == null) {
+      synchronized (newServiceGrpc.class) {
+        if ((getGetFirstIntegerMethod = newServiceGrpc.getGetFirstIntegerMethod) == null) {
+          newServiceGrpc.getGetFirstIntegerMethod = getGetFirstIntegerMethod = 
+              io.grpc.MethodDescriptor.<grpc.newService.containsString, grpc.newService.newResponseInteger>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "newService", "GetFirstInteger"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  grpc.newService.containsString.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  grpc.newService.newResponseInteger.getDefaultInstance()))
+                  .setSchemaDescriptor(new newServiceMethodDescriptorSupplier("GetFirstInteger"))
+                  .build();
+          }
+        }
+     }
+     return getGetFirstIntegerMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -96,6 +160,26 @@ public final class newServiceGrpc {
       asyncUnimplementedUnaryCall(getGetFirsttStringMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     *Server Streaming
+     * </pre>
+     */
+    public void getFirsttStringServerStreaming(grpc.newService.containsString request,
+        io.grpc.stub.StreamObserver<grpc.newService.containsString> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetFirsttStringServerStreamingMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     *unary
+     * </pre>
+     */
+    public void getFirstInteger(grpc.newService.containsString request,
+        io.grpc.stub.StreamObserver<grpc.newService.newResponseInteger> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetFirstIntegerMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -105,6 +189,20 @@ public final class newServiceGrpc {
                 grpc.newService.containsString,
                 grpc.newService.containsString>(
                   this, METHODID_GET_FIRSTT_STRING)))
+          .addMethod(
+            getGetFirsttStringServerStreamingMethod(),
+            asyncServerStreamingCall(
+              new MethodHandlers<
+                grpc.newService.containsString,
+                grpc.newService.containsString>(
+                  this, METHODID_GET_FIRSTT_STRING_SERVER_STREAMING)))
+          .addMethod(
+            getGetFirstIntegerMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                grpc.newService.containsString,
+                grpc.newService.newResponseInteger>(
+                  this, METHODID_GET_FIRST_INTEGER)))
           .build();
     }
   }
@@ -137,6 +235,28 @@ public final class newServiceGrpc {
       asyncUnaryCall(
           getChannel().newCall(getGetFirsttStringMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     *Server Streaming
+     * </pre>
+     */
+    public void getFirsttStringServerStreaming(grpc.newService.containsString request,
+        io.grpc.stub.StreamObserver<grpc.newService.containsString> responseObserver) {
+      asyncServerStreamingCall(
+          getChannel().newCall(getGetFirsttStringServerStreamingMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     *unary
+     * </pre>
+     */
+    public void getFirstInteger(grpc.newService.containsString request,
+        io.grpc.stub.StreamObserver<grpc.newService.newResponseInteger> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetFirstIntegerMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -165,6 +285,27 @@ public final class newServiceGrpc {
     public grpc.newService.containsString getFirsttString(grpc.newService.containsString request) {
       return blockingUnaryCall(
           getChannel(), getGetFirsttStringMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     *Server Streaming
+     * </pre>
+     */
+    public java.util.Iterator<grpc.newService.containsString> getFirsttStringServerStreaming(
+        grpc.newService.containsString request) {
+      return blockingServerStreamingCall(
+          getChannel(), getGetFirsttStringServerStreamingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     *unary
+     * </pre>
+     */
+    public grpc.newService.newResponseInteger getFirstInteger(grpc.newService.containsString request) {
+      return blockingUnaryCall(
+          getChannel(), getGetFirstIntegerMethod(), getCallOptions(), request);
     }
   }
 
@@ -196,9 +337,22 @@ public final class newServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(getGetFirsttStringMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     *unary
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<grpc.newService.newResponseInteger> getFirstInteger(
+        grpc.newService.containsString request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetFirstIntegerMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_FIRSTT_STRING = 0;
+  private static final int METHODID_GET_FIRSTT_STRING_SERVER_STREAMING = 1;
+  private static final int METHODID_GET_FIRST_INTEGER = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -220,6 +374,14 @@ public final class newServiceGrpc {
         case METHODID_GET_FIRSTT_STRING:
           serviceImpl.getFirsttString((grpc.newService.containsString) request,
               (io.grpc.stub.StreamObserver<grpc.newService.containsString>) responseObserver);
+          break;
+        case METHODID_GET_FIRSTT_STRING_SERVER_STREAMING:
+          serviceImpl.getFirsttStringServerStreaming((grpc.newService.containsString) request,
+              (io.grpc.stub.StreamObserver<grpc.newService.containsString>) responseObserver);
+          break;
+        case METHODID_GET_FIRST_INTEGER:
+          serviceImpl.getFirstInteger((grpc.newService.containsString) request,
+              (io.grpc.stub.StreamObserver<grpc.newService.newResponseInteger>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -283,6 +445,8 @@ public final class newServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new newServiceFileDescriptorSupplier())
               .addMethod(getGetFirsttStringMethod())
+              .addMethod(getGetFirsttStringServerStreamingMethod())
+              .addMethod(getGetFirstIntegerMethod())
               .build();
         }
       }
