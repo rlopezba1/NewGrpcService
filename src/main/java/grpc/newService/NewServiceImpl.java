@@ -35,13 +35,15 @@ public final class NewServiceImpl {
     java.lang.String[] descriptorData = {
       "\n\020newService.proto\"%\n\016containsString\022\023\n\013" +
       "firstString\030\001 \001(\t\"*\n\022newResponseInteger\022" +
-      "\024\n\014firstInteger\030\002 \001(\0052\302\001\n\nnewService\0223\n\017" +
+      "\024\n\014firstInteger\030\002 \001(\0052\207\002\n\nnewService\0223\n\017" +
       "GetFirsttString\022\017.containsString\032\017.conta" +
       "insString\022F\n\036GetFirsttStringServerStream" +
       "ing\022\017.containsString\032\017.containsString\"\0000" +
-      "\001\0227\n\017GetFirstInteger\022\017.containsString\032\023." +
-      "newResponseIntegerB#\n\017grpc.newServiceB\016N" +
-      "ewServiceImplP\001b\006proto3"
+      "\001\0229\n\017GetFirstInteger\022\017.containsString\032\023." +
+      "newResponseInteger\"\000\022A\n\031SendStringClient" +
+      "Streaming\022\017.containsString\032\017.containsStr" +
+      "ing\"\000(\001B#\n\017grpc.newServiceB\016NewServiceIm" +
+      "plP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

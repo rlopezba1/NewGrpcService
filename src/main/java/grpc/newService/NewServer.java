@@ -2,6 +2,8 @@ package grpc.newService;
 
 import java.io.IOException;
 
+import com.google.protobuf.Value;
+
 import grpc.newService.newServiceGrpc.newServiceImplBase;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
@@ -13,7 +15,6 @@ public class NewServer {
 
 	public static void main(String[] args) throws IOException, InterruptedException {
 		// TODO Auto-generated method stub
-
 		NewServer ourServer = new NewServer();
 		ourServer.start();
 	}
@@ -27,7 +28,6 @@ public class NewServer {
 		System.out.println("Server running on port: " + port);
 		
 		server.awaitTermination();
-
 	}
 	
 	// Extend abstract base class for our own implementation
@@ -48,9 +48,7 @@ public class NewServer {
 			
 			responseObserver.onNext(responseBuilder.build());
 			responseObserver.onCompleted();
-			
-		}
-		
+			}	
 		
 		
 		@Override
@@ -67,12 +65,8 @@ public class NewServer {
 			responseBuilder.setFirstInteger(25);
 			
 			responseObserver.onNext(responseBuilder.build());
-			responseObserver.onCompleted();
-			
-		}
-		
-		
-		
+			responseObserver.onCompleted();			
+		}		
 		
 		//@Override
 		public void getFirsttStringServerStreaming(containsString request, StreamObserver<containsString> responseObserver){
@@ -98,10 +92,46 @@ public class NewServer {
 			responseBuilder.setFirstString("Server Streaming: Our Fourth response is " + firstString);
 			responseObserver.onNext(responseBuilder.build());			
 
-			responseObserver.onCompleted();
-			
+			responseObserver.onCompleted();			
+		}
+		
+		//method for client streaming
+		// As we are the server we are going to get a stream of messages
+		// For the incoming messages we need to implement a streamObserver
+		// Which we then pass back to the grpc library
+		
+		//@Override
+		public StreamObserver<containsString>  sendStringClientStreaming(StreamObserver<containsString> responseObserver){
+			return new StreamObserver<containsString>() {
+
+				@Override
+				public void onNext(containsString request) {
+					// TODO Auto-generated method stub
+					System.out.println("On server side message that we recieved from the client is: " + request.getFirstString());
+
+				}
+
+				@Override
+				public void onError(Throwable t) {
+					// TODO Auto-generated method stub
+					
+				}
+
+				@Override
+				public void onCompleted() {
+					// TODO Auto-generated method stub
+					// now build our response
+					//  Step one create a builder
+					
+					containsString.Builder responseBuilder = containsString.newBuilder();
+					responseBuilder.setFirstString("On server side: Server says that it has got your completed message ");
+					
+					responseObserver.onNext(responseBuilder.build());
+					responseObserver.onCompleted();					
+				}};				
+			}			
 		}
 		
 		
 	}
-}
+

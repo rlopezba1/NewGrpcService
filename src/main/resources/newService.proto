@@ -14,7 +14,10 @@ service newService{
 	rpc GetFirsttStringServerStreaming(containsString) returns (stream containsString){}
 
 	//unary
-	rpc GetFirstInteger(containsString) returns (newResponseInteger);
+	rpc GetFirstInteger(containsString) returns (newResponseInteger){}
+
+	//Client streaming
+	rpc SendStringClientStreaming(stream containsString) returns (containsString){}
 
 
 }
