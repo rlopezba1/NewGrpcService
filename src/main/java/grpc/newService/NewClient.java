@@ -61,7 +61,7 @@ public class NewClient {
 		};
 		
 		// grpc library returns a streamObserver to us: requestObserver
-		// we use this to out outgoing messages
+		// we use this to out outgoing messages another
 		StreamObserver<containsString> requestObserver = asyncstub.sendStringClientStreaming(responseObserver);
 
 		requestObserver.onNext(containsString.newBuilder().setFirstString("First message in the stream from the client").build());
